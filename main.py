@@ -15,7 +15,7 @@ class CellphonePricePredictionApp:
 
         # Load data
         self.data = pd.read_csv('CellphoneData.csv')
-        self.X = self.data.drop('Price', axis=1)  # Store DataFrame directly for later use in creating widgets
+        self.X = self.data.drop(['Price', 'Product ID'], axis=1)  # Store DataFrame directly for later use in creating widgets
         self.y = self.data['Price'].values
 
         # Split data into training and testing sets
@@ -55,5 +55,3 @@ if __name__ == '__main__':
     root = tk.Tk()
     app = CellphonePricePredictionApp(root)
     root.mainloop()
-
-
